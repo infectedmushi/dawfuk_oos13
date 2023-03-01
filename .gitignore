@@ -141,3 +141,6 @@ kernel/configs/android-*.cfg
 
 # Ignore build script
 /horizon_build.sh
+
+# Ignore logs
+error.log
