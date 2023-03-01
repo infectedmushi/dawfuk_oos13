@@ -233,10 +233,6 @@ ifeq ($(OPLUS_FEATURE_ADFR_KERNEL),yes)
 export OPLUS_FEATURE_ADFR_KERNEL=yes
 endif
 
-ifeq ($(OPLUS_FEATURE_ADFR_KERNEL),yes)
-export OPLUS_FEATURE_ADFR_KERNEL=yes
-endif
-
 ifeq ($(OPLUS_FEATURE_PXLW_IRIS5),yes)
 export OPLUS_FEATURE_PXLW_IRIS5=yes
 endif
