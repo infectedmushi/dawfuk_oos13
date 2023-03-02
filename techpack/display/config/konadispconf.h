@@ -20,4 +20,6 @@
 //#ifdef OPLUS_BUG_STABILITY
 #define CONFIG_DRM_OPLUS 1
 //#endif
+#define CONFIG_PXLW_SOFT_IRIS 1
+#define PXLW_IRIS_DUAL 1
 
