@@ -221,6 +221,10 @@ void operate_mode_switch(struct touchpanel_data *ts)
 			ts->ts_ops->mode_switch(ts->chip_data, MODE_EDGE, ts->limit_edge);
 		}
 
+		if (ts->game_switch_support) {
+			ts->ts_ops->mode_switch(ts->chip_data, MODE_GAME, ts->noise_level);
+		}
+
 		if (ts->glove_mode_support) {
 			ts->ts_ops->mode_switch(ts->chip_data, MODE_GLOVE, ts->glove_enable);
 		}
@@ -8165,7 +8169,11 @@ static int fb_notifier_callback(struct notifier_block *self, unsigned long event
 {
 	int *blank;
 	int timed_out = -1;
+#ifdef CONFIG_DRM_MSM
+	struct msm_drm_notifier *evdata = data;
+#else
 	struct fb_event *evdata = data;
+#endif
 	struct touchpanel_data *ts = container_of(self, struct touchpanel_data, fb_notif);
 
 	//to aviod some kernel bug (at fbmem.c some local veriable are not initialized)
