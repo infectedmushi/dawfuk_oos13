@@ -1580,6 +1580,9 @@ struct task_struct {
 	int ux_depth;
 	u64 enqueue_time;
 	u64 inherit_ux_start;
+#ifdef CONFIG_OPLUS_UX_IM_FLAG
+	int ux_im_flag;
+#endif
 #ifdef CONFIG_OPLUS_FEATURE_SCHED_SPREAD
         int lb_state;
         int ld_flag;
