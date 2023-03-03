@@ -12,10 +12,10 @@ rm -rfv out
 export PATH="/mnt/Android/toolchains/neutron-clang/bin:$PATH"
 export USE_CCACHE=1
 export ARCH=arm64
-export VARIANT="aurora-oos-r05"
+export VARIANT="aurora-oos-r06"
 export HASH=`git rev-parse --short=4 HEAD`
 export KERNEL_ZIP="$VARIANT-$HASH"
-export LOCALVERSION="~aurora-oos-r05"
+export LOCALVERSION="~aurora-oos-r06"
 export CROSS_COMPILE=
 make O=out CC=clang LLVM=1 LLVM_IAS=1 vendor/kona-perf_defconfig
 make O=out CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LLVM=1 LLVM_IAS=1 -j32 CROSS_COMPILE=/mnt/Android/toolchains/gcc-linaro-12.2.1-2023.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu- CROSS_COMPILE_COMPAT=/mnt/Android/toolchains/gcc-linaro-12.2.1-2023.01_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
